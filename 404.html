@@ -23,25 +23,65 @@
 </style>
 
 
-<link rel="stylesheet" href="http://mumara1.shahbaz.dev1.hostingshouse.com/css/main.css">
-<link rel="stylesheet" href="http://mumara1.shahbaz.dev1.hostingshouse.com/css/custom.css">
-
-
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js">
- 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+
+<link rel="stylesheet" href="http://mumara1.shahbaz.dev1.hostingshouse.com/css/main.css">
+<link rel="stylesheet" href="http://mumara1.shahbaz.dev1.hostingshouse.com/css/header-home.css"> 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 
 
 <script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+<script>
+	function resize() {
+	    if ($(window).width() <1200) {
+	    	$(".sf-menu a.sf-with-ul").click(function() {
+	    		$(".sf-menu>li").removeClass("active-submenu");
+	    		$(this).parent().addClass("active-submenu");
+	    	});
+	    }
+	    else {
+	    	
+	    }
+	}
+	$(document).ready( function() {
+	    $(window).resize(resize);
+	    resize();
+	});
+	$(document).ready(function() {
+		$("header>.toggle_menu").click(function() {
+			$(this).toggleClass("toggle-active");
+			$("header.page_header").toggleClass("mobile-active");
+		});
+	});
+
+	$(document).on('click', 'a[href^="#"]', function(e) {
+        
+        var id = $(this).attr('href');
+        
+        var $id = $(id);
+        if ($id.length === 0) {
+            return;
+        }
+        
+        e.preventDefault();
+        
+        var pos = $id.offset().top;
+        
+        $('body, html').animate({scrollTop: pos});
+    });
+</script>
  <meta name="generator" content="Hugo 0.73.0" />
         
             
@@ -58,84 +98,87 @@
     <body class="td-home">
         
 
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand visible-xs" href="/"><image src="images/logo.png" /></a>
-                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse"  id="main_navbar">
-                    <a class="navbar-brand" href="https://xpertpk.github.io/mums.github.io/"><image src="images/logo.png" /></a>
-                    
-                        <ul class="nav navbar-nav">
+        <div class="header_absolute">
+            <div class="page_header_wrapper">
+                <header class="page_header ds affix-top">
+                  <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-3 col-md-3 col-11">
+                            <a href="/" class="logo text-center">
+                                <image src="images/logo.png" alt="Mumara Logo" />
+                            </a>
+                        </div>  
+                        <div class="col-xl-10 col-lg-6 col-1 text-sm-center">
                             
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/">Home</a>
+                            <nav class="top-nav">
+                              <ul class="nav sf-menu sf-js-enabled sf-arrows " style="touch-action: pan-y;">
+                                
+                                <li class=""><a class=" " href="/" >Home</a><span class="sf-menu-item-mobile-toggler"></span>
                                     
                                 </li>
-                            
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">App</a>
+                                
+                                <li class=""><a class=" sf-with-ul" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">App</a><span class="sf-menu-item-mobile-toggler"></span>
                                     
-                                        <ul class="sub">
-                                            
-                                            <li class="nav-item"><a href="/one/" class="nav-link"> One </a> </li>
-                                            
-                                            <li class="nav-item"><a href="/campaigns/" class="nav-link"> Campaigns </a> </li>
-                                            
-                                            <li class="nav-item"><a href="/sms/" class="nav-link"> SMS </a> </li>
-                                            
-                                            <li class="nav-item"><a href="/smsplus/" class="nav-link"> SMS&#43; </a> </li>
-                                            
-                                            <li class="nav-item"><a href="/classic/" class="nav-link"> Classic Pro </a> </li>
-                                            
-                                            <li class="nav-item"><a href="/classic-esp/" class="nav-link"> Classic ESP </a> </li>
-                                            
-                                        </ul>
-                                    
-                                </li>
-                            
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Recources</a>
-                                    
-                                        <ul class="sub">
-                                            
-                                            <li class="nav-item"><a href="https://www.school.mumara.com" class="nav-link"> Mumara Business School </a> </li>
-                                            
-                                            <li class="nav-item"><a href="https://docs.mumara.com" class="nav-link"> Documentation </a> </li>
-                                            
-                                            <li class="nav-item"><a href="/blog/" class="nav-link"> Blog </a> </li>
-                                            
-                                            <li class="nav-item"><a href="https://community.mumara.com" class="nav-link"> Community </a> </li>
-                                            
-                                        </ul>
+                                      <ul class="">
+                                        
+                                        <li><a href="/one/">One</a></li>
+                                        
+                                        <li><a href="/campaigns/">Campaigns</a></li>
+                                        
+                                        <li><a href="/sms/">SMS</a></li>
+                                        
+                                        <li><a href="/smsplus/">SMS&#43;</a></li>
+                                        
+                                        <li><a href="/classic/">Classic Pro</a></li>
+                                        
+                                        <li><a href="/classic-esp/">Classic ESP</a></li>
+                                        
+                                      </ul>
                                     
                                 </li>
-                            
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/contact-us">Contact</a>
+                                
+                                <li class=""><a class=" sf-with-ul" href="#"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Recources</a><span class="sf-menu-item-mobile-toggler"></span>
+                                    
+                                      <ul class="">
+                                        
+                                        <li><a href="https://www.school.mumara.com">Mumara Business School</a></li>
+                                        
+                                        <li><a href="https://docs.mumara.com">Documentation</a></li>
+                                        
+                                        <li><a href="/blog/">Blog</a></li>
+                                        
+                                        <li><a href="https://community.mumara.com">Community</a></li>
+                                        
+                                      </ul>
                                     
                                 </li>
-                            
-                                <li class="nav-item">
-                                    <a class="nav-link" href="https://billing.mumara.com/">My Account</a>
+                                
+                                <li class=""><a class=" " href="/contact-us" >Contact</a><span class="sf-menu-item-mobile-toggler"></span>
                                     
                                 </li>
-                            
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/about-us">About us</a>
+                                
+                                <li class=""><a class=" " href="https://billing.mumara.com/" >My Account</a><span class="sf-menu-item-mobile-toggler"></span>
                                     
                                 </li>
+                                
+                                <li class=""><a class=" " href="/about-us" >About us</a><span class="sf-menu-item-mobile-toggler"></span>
+                                    
+                                </li>
+                                
+                              </ul>
+                            </nav>
                             
-                        </ul>
-                    
-                </div>
+                        </div>
+                    </div>
+                  </div>
+                  <span class="toggle_menu">
+                    <span></span>
+                  </span>
+                </header>
             </div>
-        </nav>
+        </div>
+            
+            
 
 
 <main>
@@ -146,7 +189,72 @@
 </main>
 
         <footer>
-            <p class="copyright text-muted">© All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a>.</p>
+           <div class="footermain">
+           	<div class="row">
+           		<div class="fbloks fblock1">
+           			<div class="row">
+           				<img src="/images/footer-logo.png" width="120px" height="34px">
+                  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+                  <iframe frameborder="0" scrolling="no" title="Customer reviews powered by Trustpilot" loading="auto" src="https://widget.trustpilot.com/trustboxes/5419b6a8b0d04a076446a9ad/index.html?templateId=5419b6a8b0d04a076446a9ad&amp;businessunitId=5a9dc2508306060001af7719#locale=en-US&amp;styleHeight=24px&amp;styleWidth=100%25&amp;theme=light" ></iframe>
+           				<a class="dmca-badge" title="DMCA.com Protection Status" href="//www.dmca.com/Protection/Status.aspx?ID=994c3354-60b0-4def-8dfa-882e801d2cbc"> <img src="https://images.dmca.com/Badges/_dmca_premi_badge_1.png?ID=994c3354-60b0-4def-8dfa-882e801d2cbc" alt="DMCA.com Protection Status" /></a>
+           			</div>
+                <div class="row content" style="clear: both;">Welcome to Mumara App Store, it started after the immense success of the Self-Hosted edition of Mumara Email, largely accepted worldwide. Team Mumara worked on multiple fronts to help our clients use digital channels for marketing and customer communication. After entire architectural rebuilt, we are featuring <em>Mumara Campaigns</em>, value added and hosted edition of Mumara Email, MumaraSMS+ and MumaraSMS are the new innovations of team Mumara, whereas self-hosted edition is staying as MumaraClassic.</div>
+           		</div>
+           		<div class="fbloks fblock2">
+               <div class="widget-title">APPS</div> 
+               <ul class="footer-menu">
+                 <li><a href="/campaigns">Campaigns</a></li>
+                 <li><a href="/one">One</a></li>
+                 <li><a href="/smsplus">SMS+</a></li>
+                 <li><a href="/sms">SMS</a></li>
+                 <li><a href="/classic">Classic</a></li>
+               </ul>
+              </div>
+           		<div class="fbloks fblock3">
+               <div class="widget-title">LEGACY / CLASSIC</div> 
+               <ul class="footer-menu">
+                 <li><a href="/legacy">Legacy Version</a></li>
+               </ul> 
+              </div>
+           		<div class="fbloks fblock4">
+               <div class="widget-title">RESOURCES</div> 
+               <ul class="footer-menu">
+                 <li><a href="https://school.mumara.com" target="_blank">Mumara Business School</a></li>
+                 <li><a href="/blog">Blog</a></li>
+                 <li><a href="https://billing.mumara.com/submitticket.php?step=2&deptid=1" target="_blank">Support</a></li>
+                 <li><a href="https://community.mumara.com/" target="_blank">Community</a></li>
+               </ul> 
+              </div>
+           		<div class="fbloks fblock5">
+               <div class="widget-title">COMPANY</div> 
+               <ul class="footer-menu">
+                 <li><a href="/about-us">About us</a></li>
+                 <li><a href="/contact-us">Contact us</a></li>
+               </ul>  
+              </div>
+           		<div class="fbloks fblock6">
+               <div class="widget-title">POLICIES</div> 
+               <ul class="footer-menu">
+                 <li><a href="/terms-of-services">Terms of Services</a></li>
+                 <li><a href="/privacy-policy">Privacy Policy</a></li>
+               </ul>  
+              </div>
+           	</div>
+            <div class="row bottom-footer">
+              <div class="col-md-6">
+                 <p class="copyright">© Copyrights 2020 <a href="https://www.mumara.com">Mumara</a> | A Project by <a href="https://www.hostingshouse.coml">Hostings House (Pvt) Ltd.</a>.</p>
+              </div>
+              <div class="col-md-6">
+                <div class="footer-social">
+                  <a href="https://www.facebook.com/MumaraApps/" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://twitter.com/MumaraApps" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
+                  <a href="https://www.youtube.com/channel/UC1k6voQOVss0_PWg7CfJTdw" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
+                  <a href="https://www.linkedin.com/company/mumara" target="_blank" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="mailti:support@mumara.com" class="mail"><i class="far fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+           </div>
         </footer>
 
         
